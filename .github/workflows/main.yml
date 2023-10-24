@@ -14,12 +14,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
+        with:
+          path: simple-api-student-main 
 
       - name: Set up JDK 17
         uses: actions/setup-java@v2.5.0
         with:
           java-version: '17'
-          distribution : 'adopt'
+          distribution: 'adopt'
 
       - name: Build and test with Maven
         run: mvn clean verify
+        working-directory: simple-api-student-main
