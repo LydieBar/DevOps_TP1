@@ -24,5 +24,6 @@ jobs:
           distribution: 'adopt'
 
       - name: Build and test with Maven
-        run: mvn --file simple-api-student-main/pom.xml clean verify
+        working-directory: simple-api-student-main
+        run: mvn clean verify
 
