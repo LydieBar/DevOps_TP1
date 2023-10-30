@@ -39,19 +39,19 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./simple-api-student-main
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-backend
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-backend:1.0
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
           context: ./app
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-database
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-database:1.0
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
           context: ./http
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-httpd
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-httpd:1.0
           push: ${{ github.ref == 'refs/heads/main' }}
