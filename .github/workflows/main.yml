@@ -22,7 +22,7 @@ jobs:
 
       - name: Build and test with Maven
         working-directory: simple-api-student-main
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-tp-lydiebar_devops-tp Dsonar.organization=devops-tp-lydiebar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-tp-lydiebar_devops-tp -Dsonar.organization=devops-tp-lydiebar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./pom.xml
 
 
   build-and-push-docker-image:
