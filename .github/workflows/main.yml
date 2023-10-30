@@ -38,20 +38,20 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v3
         with:
-          working-directory: simple-api-student-main
+          context: ./simple-api-student-main
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-backend
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v3
         with:
-          working-directory: app
+          context: ./app
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-database
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v3
         with:
-          working-directory: http
+          context: ./http
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-frontend
           push: ${{ github.ref == 'refs/heads/main' }}
