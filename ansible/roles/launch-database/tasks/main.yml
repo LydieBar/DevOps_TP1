@@ -1,0 +1,7 @@
+---
+- name: Run Database Container
+  docker_container:
+    name: db
+    image: lydiebar/devops-database:1.0
+    networks:
+      - name: app-network

@@ -1,0 +1,7 @@
+- name: Run back
+  docker_container:
+    name: back_end
+    image: lydiebar/devops-backend:1.0
+    networks:
+      - name: app-network
+    
